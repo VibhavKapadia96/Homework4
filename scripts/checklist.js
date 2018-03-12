@@ -38,6 +38,12 @@
       .remove();
   };
 
+  CheckList.prototype.addRows = function(coffeeOrder) {
+    coffeeOrder.forEach(function(coffeeOrder) {
+      this.addRow(coffeeOrder);
+    }.bind(this));
+  };
+  
   function Row(coffeeOrder) {
     var $div = $("<div></div>", {
       "data-coffee-order": "checkbox",
